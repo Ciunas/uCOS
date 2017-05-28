@@ -1,17 +1,19 @@
 # uCOS
 
 
-Assignemnt2
+Assignment2
+
 Create four tasks. Three tasks pend on separate semaphores that are posted
 by the forth task which detects changes of input in Port 1.
 A positive transition on bit0 posts to semaphore 1, which task 1 is pending.
 A negative transition on bit1 posts to semaphore 2, which task 2 is pending.
 Either a positive or negative transition on bit2 post to semaphore 3, which task 3 is pending.
 When task 1,2,3 receives the semaphore it sends its task number to the serial port.
-Task 1and 2 will wait indefinitely until the semaphore arrives, but task 3 will only wait one
+Task and 2 will wait indefinitely until the semaphore arrives, but task 3 will only wait one
 second before exiting the pend and outputting 'T' to the serial port. However, if the semaphore arrives within the second the task number is outputted. 
 
-Assignemt3
+Assignment3
+
 1. Use the key.c + key.h  driver to interface to the 8051 (NO'K's) Development Board keypad.
 2. Create 6 QUEUES, each which can hold 10 void *.
 3. Create a single task (mainTask) to takes input from the keypad and based on the number of the key received,  send a message to one of six different tasks (Task1…Task 6) via unique QUEUE.
@@ -20,7 +22,8 @@ Assignemt3
 6. When a message is posted to the appropriate QUEUE  Task 1..6 will echo the character to the console screen plus the number of times the key has been pressed otherwise will print a 'Timeout Error'.
 7. Create the 6 pending task using a for loop and pass the QUEUE, TO and ID parameters in the OSTaskCreate API call. 
 
-Assignemnt4
+Assignment4
+
 Create the following application using the uCOS-II 2.84 kernel and DIO,  Clock and  Keypad driver code.
 1. Configure the application for 8 DI, 8 DO and 4X4 keypad.
 2. A change of state on any of the 8 DI will result in the Date, Time, Day Of Week, DI signal number and state (on/off) been displayed on the serial terminal.
